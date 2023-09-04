@@ -93,14 +93,6 @@ run_ber_glr_cusum_with_memory <- function(x_vec, p_pre, p_post, thres, p_min_del
       f <- n_inner - s
       p_hat_inner <- min(max(s/n_inner, p_lower), 0.99)
       m_inner <-  s * log(p_hat_inner/p_pre) + f * log((1-p_hat_inner)/(1-p_pre))
-      # print("i")
-      # print(i)
-      # print("j")
-      # print(j)
-      # print("m")
-      # print(m_inner)
-      # print("phat")
-      # print(p_hat_inner)
       if (m < m_inner) {
         m <- m_inner
         p_hat <- p_hat_inner

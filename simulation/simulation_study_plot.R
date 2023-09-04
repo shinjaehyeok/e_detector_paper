@@ -55,22 +55,3 @@ summ_tb_all |>
   ylab("Pre-change false alarm rate")
 
 summ_tb_all
-
-data_summary <- function(x) {
-  m <- mean(x)
-  ymin <- m-sd(x)
-  ymax <- m+sd(x)
-  return(c(y=m,ymin=ymin,ymax=ymax))
-}
-
-
-p <- ggplot(cusum_simul_tb$raw_tb[cusum_simul_tb$raw_tb$delay > 0,], aes(x=v, y=delay)) +
-  geom_violin()
-
-p + stat_summary(fun.data=data_summary)
-
-
-p <- ggplot(cusum_simul_tb$raw_tb, aes(x=v, y=delay)) +
-  geom_violin()
-
-p + stat_summary(fun.data=data_summary)
