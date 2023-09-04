@@ -1,4 +1,4 @@
-# e_detector_paper
+# Examples and Simulations using E-detector
 R scripts to generate examples and simulation results in the following paper.
 
 **E-detectors: a nonparametric framework for sequential change detection**  
