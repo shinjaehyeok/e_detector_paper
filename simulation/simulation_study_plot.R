@@ -41,17 +41,29 @@ summ_tb_all <- oracle_cusum_tb$summ |>
   rbind(esr_tb$summ) |>
   rbind(exact_ecs_tb$summ)
 
+# 900 * 500 for paper 
 summ_tb_all |>
   ggplot(aes(x=v, y=AD, color = Method, shape = Method, linetype=Method)) +
     geom_errorbar(aes(ymin=AD-ci_width, ymax=AD+ci_width), width=.1) +
     geom_line() +
-    geom_point() +
-    ylab("Average detection delay")
+    geom_point(size = 2.5) +
+    ylab("Average detection delay") +
+    theme(
+      axis.title = element_text(size = 12),
+      legend.title = element_text(size=12),
+      legend.text = element_text(size=10)
+      ) 
 
+# 900 * 500 for paper 
 summ_tb_all |>
   ggplot(aes(x=v, y=early_stop_ratio, color = Method, shape = Method, linetype=Method)) +
   geom_line() +
-  geom_point() +
-  ylab("Pre-change false alarm rate")
+  geom_point(size = 2.5) +
+  ylab("Pre-change false alarm rate") +
+  theme(
+    axis.title = element_text(size = 12),
+    legend.title = element_text(size=12),
+    legend.text = element_text(size=10)
+  ) 
 
 summ_tb_all
