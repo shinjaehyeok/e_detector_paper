@@ -1,7 +1,6 @@
 # NBA data analysis
 # devtools::install_github("abresler/nbastatR")
 # Sys.setenv("VROOM_CONNECTION_SIZE" = 131072 * 2)
-setwd("D:/Google_drive/R/NBA_stat")
 library(tidyverse)
 library(nbastatR)
 library(future)
